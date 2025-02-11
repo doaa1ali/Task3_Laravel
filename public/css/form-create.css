@@ -1,0 +1,88 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%; 
+    max-width: 500px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+h1 {
+    color: #333;
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+textarea {
+    resize: none;
+    height: 100px;
+}
+.save{
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.save:hover {
+    background-color: #218838;
+}
+
+.cancel{
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 40%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.cancel:hover {
+    background-color: #e74c3c;
+}
+.success-message {
+    color: green;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+select {
+    width: 100%; 
+    padding: 10px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    font-size: 16px; 
+    text-align: left; 
+    direction: rtl;
+}
