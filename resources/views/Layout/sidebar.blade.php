@@ -17,27 +17,27 @@
                     <span>DoaaAli@gmail.com</span>
                 </div>
              </div>
-       
+
              <div class="sidebar-menu">
                 <div class="menu-head">Books</div>
                 <ul>
                     <li><a href="{{route('book.index')}}"><i class="fas fa-book"></i> Books</a></li>
                     <li><a href="{{route('author.index')}}"><i class="fas fa-user-edit"></i> Authors</a></li>
-                    <li><a href=""><i class="fas fa-tags"></i> Categories</a></li>
+                    <li><a href="{{route('category.index')}}"><i class="fas fa-tags"></i> Categories</a></li>
                 </ul>
-                
+
                 <div class="menu-head">Users Management</div>
                 <ul>
                     <li><a href=""><i class="fas fa-users"></i> Users</a></li>
                     <li><a href=""><i class="fas fa-exchange-alt"></i> Borrowings</a></li>
                     <li><a href=""><i class="fas fa-clock"></i> Late Returns</a></li>
                 </ul>
-                
+
                 <div class="menu-head">Settings</div>
                 <ul>
                     <li><a href=""><i class="fas fa-cogs"></i> Settings</a></li>
                     <li><a href=""><i class="fas fa-shopping-bag"></i> Sales</a></li>
                 </ul>
-            </div>    
+            </div>
         </div>
     </div>

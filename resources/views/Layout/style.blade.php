@@ -3,4 +3,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/Dashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('css/form-create.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Show.css') }}">
+
 

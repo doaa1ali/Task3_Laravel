@@ -6,8 +6,8 @@
             <h1>Add New Author</h1><br><br>
 
             <form action="{{ route('author.store') }}" method="post" enctype="multipart/form-data">
-                @csrf 
-                
+                @csrf
+
                 <label for="name">Name of Author:</label>
                 <input type="text" id="name" name="name" value="{{ old('name') }}" required>
                 @error('name')
@@ -32,15 +32,7 @@
                     <p style="color: red; font-size: 14px; text-align: left;">{{ $message }}</p>
                 @enderror
 
-                <label for="book_id"> Select Name of Book</label>
-                <select id="book_id" name="book_id" required>
-                    <option value="">-- Select Book --</option>
-                    @foreach($books as $book)
-                        <option value="{{ $book->id }}">{{ $book->name }}</option>
-                    @endforeach
-                </select><br><br>
-
-                <button type="submit" class="save">Save</button> 
+                <button type="submit" class="save">Save</button>
                 <button type="button" onclick="window.location.href='{{ route('author.index') }}';" class="cancel">Cancel</button>
             </form>
         </div>

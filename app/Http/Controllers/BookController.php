@@ -10,17 +10,17 @@ use App\Models\Author;
 
 class BookController extends Controller
 {
- 
+
   public function index()
   {
-    $books = Book::all(); 
+    $books = Book::all();
     return view('book.index', compact('books'));
   }
 
   public function create()
   {
-      $authors = Author::all(); 
-      return view('book.create', compact('authors'));  
+      $authors = Author::all();
+      return view('book.create', compact('authors'));
   }
 
   public function store(Request $request)
@@ -32,7 +32,7 @@ class BookController extends Controller
 
         "name" => "string|required",
         "descraption" => "string|required",
-        "price" => "numeric| required" 
+        "price" => "numeric| required"
     ]);
 
     if($request->hasFile('image')){
@@ -55,7 +55,7 @@ class BookController extends Controller
       'image' =>$image,
       'author_id' => $author_id
     ];
-    
+
     Book::create($date);
     $books = Book::all();
     session()->flash('success', 'The book has been added successfully!');
@@ -69,12 +69,12 @@ class BookController extends Controller
     $query = $request->input('query');
     $books = Book::where('name', 'like', "%{$query}%")->get();
     return view('book.index', compact('books'));
-    
+
   }
 
   public function edit(Book $book)
   {
-    
+
       return view('book.edit', compact('book'));
   }
 

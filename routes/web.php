@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 //master....
@@ -12,7 +13,7 @@ Route::get('/', function () {
 
 //books....
 Route::get('book/create', [BookController::class, 'create'])->name('book.create');
-Route::post('book/store', [BookController::class, 'store'])->name("store"); 
+Route::post('book/store', [BookController::class, 'store'])->name("store");
 Route::get('book/success', [BookController::class, 'success'])->name('book-success');
 Route::get('book/index', [BookController::class, 'index'])->name('book.index');
 Route::get('book/search', [BookController::class, 'search'])->name('book.search');
@@ -30,4 +31,14 @@ Route::get('author/edit/{author}', [AuthorController::class, 'edit'])->name('aut
 Route::put('author/edit/{author}', [AuthorController::class, 'update'])->name('author.update');
 Route::delete('author/delete/{author}', [AuthorController::class, 'destroy'])->name('author.delete');
 
+
+//categories....
+Route::get('category/index', [CategoryController::class, 'index'])->name('category.index');
+Route::get('category/create', [CategoryController::class, 'create'])->name('category.create');
+Route::post('category/store', [CategoryController::class, 'store'])->name("category.store");
+Route::get('category/search', [CategoryController::class, 'search'])->name('category.search');
+Route::get('category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+Route::post('category/update', [CategoryController::class, 'update'])->name('category.update');
+Route::delete('category/delete/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
+Route::get('category/show/{id}', [CategoryController::class, 'show'])->name('category.show');
 

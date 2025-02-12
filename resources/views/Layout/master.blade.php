@@ -8,6 +8,7 @@
     <div class="main-content">
         @include('Layout.header')
         @yield('Show-Books')
+        <!-- @yield('Show-category') -->
     </div>
 
     @include('Layout.script')
