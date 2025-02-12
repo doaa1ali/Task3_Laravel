@@ -19,6 +19,7 @@ Route::get('book/search', [BookController::class, 'search'])->name('book.search'
 Route::get('book/edit/{book}', [BookController::class, 'edit'])->name('book.edit');
 Route::put('book/edit/{book}', [BookController::class, 'update'])->name('book.update');
 Route::delete('book/delete/{book}', [BookController::class, 'Delete'])->name('book.Delete');
+Route::get('book/show/{id}', [BookController::class, 'show'])->name('book.show');
 
 
 //authors....
@@ -29,5 +30,7 @@ Route::get('author/search', [AuthorController::class, 'search'])->name('author.s
 Route::get('author/edit/{author}', [AuthorController::class, 'edit'])->name('author.edit');
 Route::put('author/edit/{author}', [AuthorController::class, 'update'])->name('author.update');
 Route::delete('author/delete/{author}', [AuthorController::class, 'destroy'])->name('author.delete');
+Route::get('author/show/{id}', [AuthorController::class, 'show'])->name("author.show");
+
 
 

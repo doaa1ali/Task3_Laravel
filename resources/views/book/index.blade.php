@@ -35,7 +35,7 @@
                     <th>Description</th>
                     <th>Image of Book </th>
                     <th>Price</th>
-                    <th>Author_Id</th>
+                    <th>Author_Name</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -53,13 +53,13 @@
                         @endif
                         </td>
                         <td>${{ number_format($book->price, 2) }}</td>
-                        <td>{{ $book->author_id }}</td>
+                        <td>{{ $book->author->name ?? 'Unknown' }}</td>
                         <td class="actions">
+                        <a href="{{ route('book.show', $book->id) }}" class="show-btn">Show</a>
                             <a href="{{ route('book.edit', $book->id) }}" class="edit-btn">Edit</a>
                             <form action="{{ route('book.Delete', $book->id) }}" method="POST" class="delete-form">
                                 @csrf
                                 @method('DELETE')
-                                
                                 <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this book?')">Delete</button>
                             </form>    
                         </td>

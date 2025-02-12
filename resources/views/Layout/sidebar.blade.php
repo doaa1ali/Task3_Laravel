@@ -26,9 +26,9 @@
                     <li><a href=""><i class="fas fa-tags"></i> Categories</a></li>
                 </ul>
                 
-                <div class="menu-head">Users Management</div>
+                <div class="menu-head">Students Management</div>
                 <ul>
-                    <li><a href=""><i class="fas fa-users"></i> Users</a></li>
+                    <li><a href=""><i class="fas fa-users"></i> Students</a></li>
                     <li><a href=""><i class="fas fa-exchange-alt"></i> Borrowings</a></li>
                     <li><a href=""><i class="fas fa-clock"></i> Late Returns</a></li>
                 </ul>

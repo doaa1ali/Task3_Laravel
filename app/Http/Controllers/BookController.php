@@ -35,6 +35,8 @@ class BookController extends Controller
         "price" => "numeric| required" 
     ]);
 
+    $filename = null;
+
     if($request->hasFile('image')){
       $image = $request->file('image');
       $extention = $image->extension();
@@ -80,11 +82,23 @@ class BookController extends Controller
 
   public function update(Request $request, Book $book)
   {
-      $book->update([
+      $data_update=([
           'name' => $request->name,
           'descraption' => $request->descraption,
-          'price' => $request->price,
+          'image' => $request->image,
+          'price' => $request->price
       ]);
+
+      if($request->hasFile('image')){
+        $image = $request->file('image');
+        $extention = $image->extension();
+        $filename = "Library" . time() . '.' . $extention;
+        $image->move(public_path("uploads/book/images"), $filename);       
+        $data_update['image'] = $filename;
+      }
+
+
+      $book->update($data_update);
 
       session()->flash('success', 'The book has been updated successfully!');
       return redirect()->route('book.index');
@@ -97,7 +111,11 @@ class BookController extends Controller
       return redirect()->route('book.index')->with('success', 'Book deleted successfully!');
   }
 
-
+  public function show($id)
+  {
+    $book = Book::with('author')->findOrFail($id);
+    return view('book.show', compact('book'));
+  }
 
 
 }

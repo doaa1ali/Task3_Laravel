@@ -36,7 +36,6 @@
                     <th>Profile Image </th>
                     <th>Bio</th>
                     <th>Job Description</th>
-                    <th>Book_Id</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -55,8 +54,8 @@
                         </td>
                         <td>{{ $author->bio }}</td>
                         <td>{{ $author->job_description }}</td>
-                        <td>{{ $author->book_id }}</td>
                         <td class="actions">
+                            <a href="{{ route('author.show', $author->id) }}" class="show-btn">Show</a>
                             <a href="{{ route('author.edit', $author->id) }}" class="edit-btn">Edit</a>
                             <form action="{{ route('author.delete', $author->id) }}" method="POST" class="delete-form">
                                 @csrf
@@ -64,7 +63,6 @@
                                 
                                 <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this Author?')">Delete</button>
                             </form> 
-
                         </td>
                     </tr>
                 @endforeach   

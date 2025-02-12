@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model
 {
-    protected $fillable = ['name', 'email','profile_image','bio','job_description', 'book_id' ];
+    protected $fillable = ['name', 'email','profile_image','bio','job_description'];
 
-    public function book()
+    public function books()
     {
-        return $this->hasOne(Book::class, 'author_id');
+        return $this->hasmany(Book::class, 'author_id');
     }
 }

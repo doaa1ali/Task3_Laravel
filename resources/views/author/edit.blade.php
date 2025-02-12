@@ -9,28 +9,36 @@
                 @csrf
                 @method('PUT') 
 
-                <label for="name">Name:</label>
-                <input type="text" name="name" value="{{ $author->name }}" required>
+
+                <label for="name">Name of Author:</label>
+                <input type="text" id="name" name="name" value="{{ $author->name }}" >
+                @error('name')
+                    <p style="color: red; font-size: 14px; text-align: left;">{{ $message }}</p>
+                @enderror
 
                 <label for="email">Email:</label>
-                <input type="email" name="email" value="{{ $author->email }}" required>
+                <input type="email" id="email" name="email" value="{{ $author->email }}" >
+                @error('email')
+                    <p style="color: red; font-size: 14px; text-align: left;">{{ $message }}</p>
+                @enderror
+
+                <label for="profile_image">Image for you:</label>
+                <input type="file" id="profile_image" name="profile_image" value="{{ $author->profile_image }}" >
+                @error('profile_image')
+                    <p style="color: red; font-size: 14px; text-align: left;">{{ $message }}</p>
+                @enderror
 
                 <label for="bio">Bio:</label>
-                <textarea name="bio">{{ $author->bio }}</textarea>
+                <textarea id="bio" name="bio">{{ $author->bio }}</textarea>
+                @error('bio')
+                    <p style="color: red; font-size: 14px; text-align: left;">{{ $message }}</p>
+                @enderror
 
-                <label for="job_description">Job Description:</label>
-                <input type="text" name="job_description" value="{{ $author->job_description }}">
-
-                <label for="book_id">Book ID:</label>
-                <input type="number" name="book_id" value="{{ $author->book_id }}" required>
-
-                <label for="profile_image">Profile Image:</label><br>
-                @if($author->profile_image)
-                    <img src="{{ asset('uploads/author/images/' . $author->profile_image) }}" width="80" height="80" style="border-radius: 50%;">
-                @else
-                    <p>No Image</p>
-                @endif
-                <input type="file" name="profile_image">
+                <label for="job_description">Job_Description:</label>
+                <textarea id="job_description" name="job_description" >{{  $author->job_description }}</textarea>
+                @error('job_description')
+                    <p style="color: red; font-size: 14px; text-align: left;">{{ $message }}</p>
+                @enderror
 
                 <br><br>
                 <button type="submit" class="save">Edit</button> 

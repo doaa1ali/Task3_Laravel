@@ -9,3 +9,8 @@ setTimeout(function() {
     document.querySelector('.alert').style.display = 'none';
 }, 3000);
 
+
+function confirmCancel() {
+     window.location.href = "{{ route('author.index') }}";
+ 
+}
