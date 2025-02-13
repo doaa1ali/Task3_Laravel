@@ -28,6 +28,13 @@
                     <p>{{ $book->author->name }}</p>
                 @endif
 
+                <h3>student Name:</h3>
+                @if(!$book->student)
+                    <p>No student available for this book.</p>
+                @else
+                    <p>{{ $book->student->name }}</p>
+                @endif
+
             </div>
 
             <div class="buttons-container">
