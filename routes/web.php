@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\StudentController;
@@ -41,3 +42,7 @@ Route::get('student/edit/{student}', [StudentController::class, 'edit'])->name('
 Route::put('student/edit/{student}', [StudentController::class, 'update'])->name('student.update');
 Route::delete('student/delete/{student}', [StudentController::class, 'destroy'])->name('student.delete');
 Route::get('student/show/{student}', [StudentController::class, 'show'])->name('student.show');
+
+
+
+
