@@ -33,6 +33,26 @@
                     <p style="color: red; font-size: 14px; text-align: left;">{{ $message }}</p>
                 @enderror
 
+                <label for="category_id">Select Categories</label>
+                <select id="category_id" name="category_id[]" multiple required>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}" 
+                            {{ $book->categories->contains($category->id) ? 'selected' : '' }}>
+                            {{ $category->name }}
+                        </option>
+                    @endforeach
+                </select><br><br>
+
+                <label for="student_id"> Select Name of Student</label>
+                <select id="student_id" name="student_id" required>
+                    <option value="">-- Select Student --</option>
+                    @foreach($students as $student)
+                        <option value="{{ $student->id }}" {{ $book->student_id == $student->id ? 'selected' : '' }}> 
+                            {{ $student->name }}
+                        </option>
+                    @endforeach
+                </select><br><br>
+
                 
 
                 <button type="submit" class="save">Edit</button> 

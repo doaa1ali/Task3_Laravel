@@ -73,8 +73,10 @@
 
 .buttons-container {
     display: flex;
-    gap: 10px; 
+    gap: 10px;
     margin-top: 20px;
+    width: 100%;
+
 }
 
 
@@ -101,21 +103,26 @@
 .book-details {
     flex: 1;
     text-align: left;
+    
 }
 
-.book-details h4 {
-    color: #333;
-    margin-top: 5px; 
-}
-
-.book-details h6 {
-    color: #777;
-    margin: 5px 0; 
+.book-details h4,
+.book-details span {
+    display: inline-block;
+    margin-bottom:3px ;
 }
 
 .list {
     color: #777;
-    margin: 5px 0; 
+    margin: 3px ; 
+}
+
+
+.student-details{
+    display: flex;
+    align-items: left;
+    gap: 10px;
+
 }
 
 

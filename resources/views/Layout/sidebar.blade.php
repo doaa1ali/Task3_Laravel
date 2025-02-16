@@ -17,7 +17,6 @@
                     <span>DoaaAli@gmail.com</span>
                 </div>
              </div>
-
              <div class="sidebar-menu">
                 <div class="menu-head">Books</div>
                 <ul>
@@ -28,11 +27,11 @@
                 
                 <div class="menu-head">Students Management</div>
                 <ul>
-                    <li><a href=""><i class="fas fa-users"></i> Students</a></li>
+                    <li><a href="{{route('student.index')}}"><i class="fas fa-users"></i> Students</a></li>
                     <li><a href=""><i class="fas fa-exchange-alt"></i> Borrowings</a></li>
                     <li><a href=""><i class="fas fa-clock"></i> Late Returns</a></li>
                 </ul>
-
+                
                 <div class="menu-head">Settings</div>
                 <ul>
                     <li><a href=""><i class="fas fa-cogs"></i> Settings</a></li>

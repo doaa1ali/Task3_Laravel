@@ -22,7 +22,6 @@
 
                 <label for="image">Image of Book:</label>
                 <input type="file" id="image" name="image" value="{{ old('image') }}" >
-
                 <label for="price">Price:</label>
                 <input type="number" id="price" name="price" value="{{ old('price') }}" required>
                 @error('price')
@@ -36,9 +35,15 @@
                         <option value="{{ $author->id }}">{{ $author->name }}</option>
                     @endforeach
                 </select><br><br>
+                <select  id="student_id" name="student_id" >
+                        <option value="">Select an Student</option>
+                        @foreach($students as $student)
+                            <option value="{{ $student->id }}">{{ $student->name }}</option>
+                        @endforeach
+                    </select>
 
-                <button type="submit" class="save">Save</button>
-                <button type="button" onclick="window.location.href='{{ route('book.index')}}';" class="cancel">Cancel</button>
+                <button type="submit" class="save">Save</button> 
+                <button type="button" onclick="window.location.href='{{ route('book.index') }}';" class="cancel">Cancel</button>
             </form>
         </div>
     </main>

@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 //master....
@@ -18,8 +19,8 @@ Route::post('book/store', [BookController::class, 'store'])->name("store");
 Route::get('book/success', [BookController::class, 'success'])->name('book-success');
 Route::get('book/index', [BookController::class, 'index'])->name('book.index');
 Route::get('book/search', [BookController::class, 'search'])->name('book.search');
-Route::get('book/edit/{book}', [BookController::class, 'edit'])->name('book.edit');
-Route::put('book/edit/{book}', [BookController::class, 'update'])->name('book.update');
+Route::get('book/edit/{id}', [BookController::class, 'edit'])->name('book.edit');
+Route::put('book/edit/{id}', [BookController::class, 'update'])->name('book.update');
 Route::delete('book/delete/{book}', [BookController::class, 'Delete'])->name('book.Delete');
 Route::get('book/show/{id}', [BookController::class, 'show'])->name('book.show');
 
@@ -47,6 +48,15 @@ Route::delete('category/delete/{id}', [CategoryController::class, 'destroy'])->n
 Route::get('category/show/{id}', [CategoryController::class, 'show'])->name('category.show');
 
 
+//students....
+Route::get('student/index', [StudentController::class, 'index'])->name('student.index');
+Route::get('student/create', [StudentController::class, 'create'])->name('student.create');
+Route::post('student/store', [StudentController::class, 'store'])->name("student.store");
+Route::get('student/search', [StudentController::class, 'search'])->name('student.search');
+Route::get('student/edit/{student}', [StudentController::class, 'edit'])->name('student.edit');
+Route::put('student/edit/{student}', [StudentController::class, 'update'])->name('student.update');
+Route::delete('student/delete/{student}', [StudentController::class, 'destroy'])->name('student.delete');
+Route::get('student/show/{student}', [StudentController::class, 'show'])->name('student.show');
 
 
 

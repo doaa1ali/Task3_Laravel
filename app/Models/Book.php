@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-    protected $fillable = ['name' , 'descraption', 'image','price','author_id'];
+    protected $fillable = ['name' , 'descraption', 'image','price','author_id','student_id'];
 
     public function author()
     {
@@ -16,5 +16,10 @@ class Book extends Model
     public function categories()
     {
         return $this->belongsToMany(Category::class, 'book_category', 'book_id', 'category_id');
+
+    } 
+    public function student()
+    {
+        return $this->belongsTo(Student::class, 'student_id');
     }
 }

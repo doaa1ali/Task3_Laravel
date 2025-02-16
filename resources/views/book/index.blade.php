@@ -35,6 +35,7 @@
                     <th>Image of Book </th>
                     <th>Price</th>
                     <th>Author_Name</th>
+                    <th>student</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -53,6 +54,13 @@
                         </td>
                         <td>${{ number_format($book->price, 2) }}</td>
                         <td>{{ $book->author->name ?? 'Unknown' }}</td>
+                        <td>
+                            @if($book->student)
+                                {{ $book->student->name }}
+                            @else
+                                <span class="text-muted">No Student</span>
+                            @endif
+                        </td>
                         <td class="actions">
                         <a href="{{ route('book.show', $book->id) }}" class="show-btn">Show</a>
                             <a href="{{ route('book.edit', $book->id) }}" class="edit-btn">Edit</a>
@@ -60,10 +68,10 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this book?')">Delete</button>
-                            </form>
+                            </form>    
                         </td>
                     </tr>
-                @endforeach
+                @endforeach   
             </tbody>
         </table>
     </div>

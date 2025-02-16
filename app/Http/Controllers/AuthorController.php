@@ -44,7 +44,7 @@ class AuthorController extends Controller
         $profile_image = $filename;
         $bio = $request->bio;
         $job_description = $request->job_description;
-        $book_id = $request->book_id;
+       
     
         $date = [
           'name' => $name,
@@ -52,7 +52,7 @@ class AuthorController extends Controller
           'profile_image' => $profile_image,
           'bio' =>$bio,
           'job_description' => $job_description,
-          'book_id' => $book_id
+         
         ];
         
         Author::create($date);
@@ -103,7 +103,6 @@ class AuthorController extends Controller
         session()->flash('success', 'The book has been updated successfully!');
         return redirect()->route('author.index');
     }
-
 
     public function destroy(Author $author)
     {

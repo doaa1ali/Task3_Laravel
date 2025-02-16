@@ -17,12 +17,15 @@
                         <img src="{{ asset('uploads/book/images/' . $book->image) }}" alt="Book Image">
                     </div>
                     <div class="book-details">
-                        <h4>{{ $book->name }}</h4>
-                        <h4>{{ $book->author_id }}</h4>
-                        <h6>{{ $book->descraption }}</h6>
-                        <h4>$ {{ $book->price }}</h4>
+                        <h4>Name of Book:</h4> <span>{{ $book->name }}</span><br>
 
+                        <h4>Author:</h4> <span>{{ $book->author->name }}</span><br>
+
+                        <h4>Description:</h4> <span>{{ $book->descraption }}</span><br>
+
+                        <h4>Price:</h4> <span>${{ $book->price }}</span><br>
                     </div>
+
                 </div>
             @endforeach
 
