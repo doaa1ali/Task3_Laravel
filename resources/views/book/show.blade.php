@@ -28,6 +28,17 @@
                     <p>{{ $book->author->name }}</p>
                 @endif
 
+                <h3>Categories:</h3>
+                @if($book->categories->isNotEmpty())
+                    <ul>
+                        @foreach($book->categories as $category)
+                            <li class="list">{{ $category->name }}</li>
+                        @endforeach
+                    </ul>
+                @else
+                    <p>No Categories</p>
+                @endif
+
             </div>
 
             <div class="buttons-container">

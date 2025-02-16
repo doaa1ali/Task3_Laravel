@@ -8,8 +8,8 @@
             <h1>Add New Author</h1>
 
             <form action="{{ route('author.store') }}" method="post" enctype="multipart/form-data">
-                @csrf 
-                
+                @csrf
+
                 <label for="name">Name of Author:</label>
                 <input type="text" id="name" name="name" value="{{ old('name') }}" >
                 @error('name')

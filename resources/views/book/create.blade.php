@@ -6,8 +6,8 @@
             <h1>Add New Book</h1><br><br>
 
             <form action="{{ route('store') }}" method="post" enctype="multipart/form-data">
-                @csrf 
-                
+                @csrf
+
                 <label for="name">Name of Book:</label>
                 <input type="text" id="name" name="name" value="{{ old('name') }}" required>
                 @error('name')
@@ -22,7 +22,7 @@
 
                 <label for="image">Image of Book:</label>
                 <input type="file" id="image" name="image" value="{{ old('image') }}" >
-                
+
                 <label for="price">Price:</label>
                 <input type="number" id="price" name="price" value="{{ old('price') }}" required>
                 @error('price')
@@ -37,8 +37,8 @@
                     @endforeach
                 </select><br><br>
 
-                <button type="submit" class="save">Save</button> 
-                <button type="button" onclick="window.location.href='{{ route('book.index') }}';" class="cancel">Cancel</button>
+                <button type="submit" class="save">Save</button>
+                <button type="button" onclick="window.location.href='{{ route('book.index')}}';" class="cancel">Cancel</button>
             </form>
         </div>
     </main>

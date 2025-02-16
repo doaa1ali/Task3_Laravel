@@ -15,7 +15,7 @@
                 <button type="submit">
                     <i class="fa fa-search"></i>
                 </button>
-            </form>  
+            </form>
         </div>
     </div>
 
@@ -24,7 +24,6 @@
             {{ session('success') }}
         </div>
     @endif
-
 
     <div class="table-container">
         <table class="styled-table">
@@ -48,7 +47,7 @@
                         <td>
                         @if($book->image)
                             <img src="{{ asset('uploads/book/images/' . $book->image) }}"  width="80" height="80" style="border-radius: 50%; ">
-                        @else                   
+                        @else
                             <p>No Image</p>
                         @endif
                         </td>
@@ -61,10 +60,10 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this book?')">Delete</button>
-                            </form>    
+                            </form>
                         </td>
                     </tr>
-                @endforeach   
+                @endforeach
             </tbody>
         </table>
     </div>
